@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Folawewo/nasa-control/issues"
   },
-  "homepage": "https://github.com/Folawewo/nasa-control#readme"
+  "homepage": "https://github.com/Folawewo/nasa-control#readme",
+  "dependencies": {
+    "morgan": "^1.10.0"
+  }
 }
