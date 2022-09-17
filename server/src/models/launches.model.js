@@ -20,6 +20,7 @@ function getAllLaunches() {
 }
 
 function addNewLaunch(launch) {
+  latestFlightNumber += 1;
   launches.set(launch.flightNumber, launch);
 }
 
