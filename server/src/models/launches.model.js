@@ -24,6 +24,7 @@ function addNewLaunch(launch) {
   launches.set(
     launch.flightNumber,
     Object.assign(launch, {
+      upcoming: true,
       customers: ['Space X', 'NASA'],
       flightNumber: latestFlightNumber,
     })
