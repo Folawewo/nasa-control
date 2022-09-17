@@ -20,8 +20,14 @@ function getAllLaunches() {
 }
 
 function addNewLaunch(launch) {
-  latestFlightNumber += 1;
-  launches.set(launch.flightNumber, launch);
+  latestFlightNumber++;
+  launches.set(
+    launch.flightNumber,
+    Object.assign(launch, {
+      customers: ['Space X', 'NASA'],
+      flightNumber: latestFlightNumber,
+    })
+  );
 }
 
 module.exports = {
