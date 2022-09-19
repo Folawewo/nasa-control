@@ -10,9 +10,10 @@ function httpAddNewLaunch(req, res) {
   launch.launchDate = new Date(launch.launchDate);
 
   addNewLaunch(launch);
-  res.status(201);
+  res.status(201).json(launch);
 }
 
 module.exports = {
   httpGetAllLaunches,
+  httpAddNewLaunch
 };
