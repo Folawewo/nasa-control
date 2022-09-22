@@ -11,7 +11,7 @@ describe('Test GET /launches', () => {
 });
 
 describe('Test POST /launch', () => {
-  test('It should respond with 200 success', () => {});
+  test('It should respond with 200 success', async () => {});
   test('It should catch missing required properties', () => {});
   test('It should catch invalid dates', () => {});
 });
