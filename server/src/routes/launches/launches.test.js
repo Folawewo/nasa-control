@@ -12,11 +12,10 @@ describe('Test GET /launches', () => {
 
 describe('Test POST /launch', () => {
   test('It should respond with 200 success', async () => {
-    const response = await request(app)
-    .post('/launches')
-    .send({
-      
-    })
+    const response = await request(app).post('/launches').send({
+      mission: 'USS Enterprise',
+      rocket: 'NCC 170-D',
+    });
   });
   test('It should catch missing required properties', () => {});
   test('It should catch invalid dates', () => {});
