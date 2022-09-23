@@ -22,6 +22,8 @@ describe('Test POST /launch', () => {
       })
       .expect('Content-Type', /json/)
       .expect(201);
+
+      expect(response.body)
   });
   test('It should catch missing required properties', () => {});
   test('It should catch invalid dates', () => {});
