@@ -11,7 +11,7 @@ describe('Test GET /launches', () => {
 });
 
 describe('Test POST /launch', () => {
-  test('It should respond with 200 success', async () => {
+  test('It should respond with 201 created', async () => {
     const response = await request(app)
       .post('/launches')
       .send({
@@ -21,7 +21,7 @@ describe('Test POST /launch', () => {
         launchDate: 'January 4, 2028',
       })
       .expect('Content-Type', /json/)
-      .expect(200);
+      .expect(201);
   });
   test('It should catch missing required properties', () => {});
   test('It should catch invalid dates', () => {});
