@@ -10,13 +10,13 @@ describe('Test GET /launches', () => {
   });
 });
 
-describe('Test POST /launch', () => {
-  const completeLaunchData = {
-    mission: 'USS Enterprise',
-    rocket: 'NCC 170-D',
-    target: 'Kepler-186 f',
-    launchDate: 'January 4, 2028',
-  };
+// describe('Test POST /launch', () => {
+//   const completeLaunchData = {
+//     mission: 'USS Enterprise',
+//     rocket: 'NCC 170-D',
+//     target: 'Kepler-186 f',
+//     launchDate: 'January 4, 2028',
+//   };
 
   const launchDataWithoutDate = {
     mission: 'USS Enterprise',
