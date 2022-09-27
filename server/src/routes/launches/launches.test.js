@@ -18,11 +18,11 @@ describe('Test GET /launches', () => {
 //     launchDate: 'January 4, 2028',
 //   };
 
-  // const launchDataWithoutDate = {
-  //   mission: 'USS Enterprise',
-  //   rocket: 'NCC 170-D',
-  //   target: 'Kepler-186 f',
-  // };
+  const launchDataWithoutDate = {
+    mission: 'USS Enterprise',
+    rocket: 'NCC 170-D',
+    target: 'Kepler-186 f',
+  };
 
   const launchDataInvalidDate = {
     mission: 'USS Enterprise',
