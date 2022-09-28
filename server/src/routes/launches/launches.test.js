@@ -10,26 +10,26 @@ describe('Test GET /launches', () => {
   });
 });
 
-describe('Test POST /launch', () => {
-  const completeLaunchData = {
-    mission: 'USS Enterprise',
-    rocket: 'NCC 170-D',
-    target: 'Kepler-186 f',
-    launchDate: 'January 4, 2028',
-  };
+// describe('Test POST /launch', () => {
+//   const completeLaunchData = {
+//     mission: 'USS Enterprise',
+//     rocket: 'NCC 170-D',
+//     target: 'Kepler-186 f',
+//     launchDate: 'January 4, 2028',
+//   };
 
-  const launchDataWithoutDate = {
-    mission: 'USS Enterprise',
-    rocket: 'NCC 170-D',
-    target: 'Kepler-186 f',
-  };
+//   const launchDataWithoutDate = {
+//     mission: 'USS Enterprise',
+//     rocket: 'NCC 170-D',
+//     target: 'Kepler-186 f',
+//   };
 
-  const launchDataInvalidDate = {
-    mission: 'USS Enterprise',
-    rocket: 'NCC 170-D',
-    target: 'Kepler-186 f',
-    launchDate: 'zoot',
-  };
+//   const launchDataInvalidDate = {
+//     mission: 'USS Enterprise',
+//     rocket: 'NCC 170-D',
+//     target: 'Kepler-186 f',
+//     launchDate: 'zoot',
+//   };
 
   test('It should respond with 201 created', async () => {
     const response = await request(app)
