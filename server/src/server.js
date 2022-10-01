@@ -20,10 +20,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 async function startServer() {
-  await mongoose.connect(MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  await mongoose.connect(MONGO_URL);
   await loadPlanetsData();
 
   server.listen(PORT, () => {
