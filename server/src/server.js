@@ -22,8 +22,6 @@ mongoose.connection.on('error', (err) => {
 async function startServer() {
   await mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
-    useFindAndModify: true,
-    useCreateIndex: true,
     useUnifiedTopology: true,
   });
   await loadPlanetsData();
