@@ -11,6 +11,14 @@ const MONGO_URL =
 
 const server = http.createServer(app);
 
+mongoose.connection.once('open', () => {
+  console.log('Database Connected!');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error(err);
+});
+
 async function startServer() {
   await mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
