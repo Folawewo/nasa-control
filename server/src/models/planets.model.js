@@ -34,7 +34,7 @@ function loadPlanetsData() {
         reject(err);
       })
       .on('end', async () => {
-        const countPlanetsFound = (await getAllPlanets()).length
+        const countPlanetsFound = (await getAllPlanets()).length;
         console.log(`${countPlanetsFound} habitable planets found!`);
         resolve();
       });
@@ -42,25 +42,31 @@ function loadPlanetsData() {
 }
 
 async function getAllPlanets() {
-  return await planets.find({});
+  return await planets.find(
+    {},
+    {
+      _id: 0,
+      __v: 0,
+    }
+  );
 }
 
 async function savePlanet(planet) {
-try {
-  await planets.updateOne(
-    {
-      keplerName: planet.kepler_name,
-    },
-    {
-      keplerName: planet.kepler_name,
-    },
-    {
-      upsert: true,
-    }
-  );
-} catch(err) {
-  console.error(`Could not save planet ${err}`)
-}
+  try {
+    await planets.updateOne(
+      {
+        keplerName: planet.kepler_name,
+      },
+      {
+        keplerName: planet.kepler_name,
+      },
+      {
+        upsert: true,
+      }
+    );
+  } catch (err) {
+    console.error(`Could not save planet ${err}`);
+  }
 }
 
 module.exports = {
