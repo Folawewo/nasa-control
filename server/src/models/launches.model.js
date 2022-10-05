@@ -62,8 +62,16 @@ async function saveLaunch(launch) {
   );
 }
 
-function scheduleNewLaunch() {
-  
+async function scheduleNewLaunch(launch) {
+  const newFlightNumber = (await getLatestFlightNumber()) + 1;
+  const newLaunch = Object.assign(launch, {
+    success: true,
+    upcoming: true,
+    customers: ['Space X', 'NASA'],
+    flightNumber: newFlightNumber,
+  });
+
+  await saveLaunch(newLaunch);
 }
 
 // function addNewLaunch(launch) {
