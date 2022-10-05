@@ -62,18 +62,22 @@ async function saveLaunch(launch) {
   );
 }
 
-function addNewLaunch(launch) {
-  latestFlightNumber++;
-  launches.set(
-    launch.flightNumber,
-    Object.assign(launch, {
-      success: true,
-      upcoming: true,
-      customers: ['Space X', 'NASA'],
-      flightNumber: latestFlightNumber,
-    })
-  );
+function scheduleNewLaunch() {
+  
 }
+
+// function addNewLaunch(launch) {
+//   latestFlightNumber++;
+//   launches.set(
+//     latestFlightNumber,
+//     Object.assign(launch, {
+//       success: true,
+//       upcoming: true,
+//       customers: ['Space X', 'NASA'],
+//       flightNumber: latestFlightNumber,
+//     })
+//   );
+// }
 
 function abortLaunchById(launchId) {
   const aborted = launches.get(launchId);
