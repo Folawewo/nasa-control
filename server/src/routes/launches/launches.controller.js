@@ -30,7 +30,7 @@ async function httpAddNewLaunch(req, res) {
   }
 
   await scheduleNewLaunch(launch);
-  res.status(201).json(launch);
+  return res.status(201).json(launch);
 }
 
 function httpAbortLaunch(req, res) {
