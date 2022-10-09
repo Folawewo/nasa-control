@@ -16,6 +16,10 @@ const launch = {
 
 saveLaunch(launch);
 
+async function loadLaunchesData() {
+  console.log('Downloading launch data...');
+}
+
 async function existsLaunchWithId(launchId) {
   return await launchesDatabase.findOne({
     flightNumber: launchId,
@@ -43,11 +47,15 @@ async function getAllLaunches() {
 }
 
 async function saveLaunch(launch) {
-  await launchesDatabase.findOneAndUpdate({
-    flightNumber: launch.flightNumber,
-  }, launch, {
-    upsert: true,
-  });
+  await launchesDatabase.findOneAndUpdate(
+    {
+      flightNumber: launch.flightNumber,
+    },
+    launch,
+    {
+      upsert: true,
+    }
+  );
 }
 
 async function scheduleNewLaunch(launch) {
@@ -59,7 +67,7 @@ async function scheduleNewLaunch(launch) {
     throw new Error('No matching planet found');
   }
 
-  const newFlightNumber = await getLatestFlightNumber() + 1;
+  const newFlightNumber = (await getLatestFlightNumber()) + 1;
 
   const newLaunch = Object.assign(launch, {
     success: true,
@@ -85,6 +93,7 @@ async function abortLaunchById(launchId) {
 }
 
 module.exports = {
+  loadLaunchesData,
   existsLaunchWithId,
   getAllLaunches,
   scheduleNewLaunch,
